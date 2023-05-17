@@ -1,0 +1,58 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package btlab03;
+
+/**
+ *
+ * @author phankhang
+ */
+public class Product {
+    public String description;
+    public String ProductID;
+    public double price;
+
+    public Product() {
+    }
+
+    public Product(String description, String ProductID, double price) {
+        this.description = description;
+        this.ProductID = ProductID;
+        this.price = price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getProductID() {
+        return ProductID;
+    }
+
+    public void setProductID(String ProductID) {
+        this.ProductID = ProductID;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" + "description=" + description + ", ProductID=" + ProductID + ", price=" + price + '}';
+    }
+
+   
+    
+    
+    
+}

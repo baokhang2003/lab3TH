@@ -1,0 +1,66 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package btlab03;
+
+import java.text.NumberFormat;
+import java.time.format.DateTimeFormatter;
+
+/**
+ *
+ * @author phankhang
+ */
+public class OrderDetail extends Product {
+    public int quality;
+    public Product product;
+
+    public OrderDetail() {
+    }
+    
+    
+
+    public OrderDetail(int quality, Product product) {
+        super();
+        this.quality = quality;
+        this.product = product;
+    }
+    
+    public int getQuality() {
+        return quality;
+    }
+
+    public void setQuality(int quality) {
+        this.quality = quality;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+
+    void add(OrderDetail orderDetail) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+    @Override 
+    public String toString() {
+        NumberFormat nbf = NumberFormat.getInstance();
+        nbf.setGroupingUsed(true);
+        String dongia = nbf.format(product.getPrice());
+        String thanhtien = nbf.format(calcTotalPrice());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        
+        return String.format("| %-15s | %-25s | %-15d | %-20s | %-10s | %n", product.getProductID(), product.getDescription(), quality, dongia, thanhtien);
+    }
+    
+    public double calcTotalPrice() {
+        double thanhtien = this.getQuality() * this.product.getPrice();
+        
+        return thanhtien;
+    }
+}
